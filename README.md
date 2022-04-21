@@ -2,7 +2,6 @@
 
 ESP8266-OTA-HomeKit
 
-#!/bin/bash
 
 `. $HOME/esp/esp-idf/export.sh`
 
