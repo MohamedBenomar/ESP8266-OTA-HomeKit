@@ -12,4 +12,5 @@ esptool.py -p /dev/tty.SLAB_USBtoUART --baud 115200 write_flash -fs 1MB -fm dout
 
 ### Compile Code
 
-`docker run -it --rm -v "$(pwd)":/project -w /project esp-rtos make -C main all`
+`docker run -it --rm -v "$(pwd)":/project -w /project esp-rtos make -C main FLASH_SIZE=8 HOMEKIT_SPI_FLASH_BASE_ADDR=0x8C000 all`
+
