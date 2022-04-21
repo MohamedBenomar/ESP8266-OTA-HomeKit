@@ -11,4 +11,4 @@ ESP8266-OTA-HomeKit
 
 ### Compile Code
 
-`docker run -it --rm -v $`pwd$`:/project -w /project esp-rtos make -C main all`
+`docker run -it --rm -v "$(pwd)":/project -w /project esp-rtos make -C main all`
