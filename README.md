@@ -10,9 +10,9 @@ ESP8266-OTA-HomeKit
 
 docker run -it --rm -v "$(pwd)":/project -w /project esp-rtos make -C main FLASH_SIZE=8 HOMEKIT_SPI_FLASH_BASE_ADDR=0x8C000 all
 
-openssl sha384 -binary -out firmware/main.bin.sig firmware/main.bin
+openssl sha384 -binary -out main/firmware/main.bin.sig main/firmware/main.bin
 
-printf "%08x" `cat firmware/main.bin | wc -c`| xxd -r -p >>firmware/main.bin.sig
+printf "%08x" `cat main/firmware/main.bin | wc -c`| xxd -r -p >>main/firmware/main.bin.sig
 ```
 
 ### Raspberry Pi
@@ -22,9 +22,9 @@ export SDK_PATH=~/esp/esp-open-rtos
 
 make -C main all
 
-openssl sha384 -binary -out firmware/main.bin.sig firmware/main.bin
+openssl sha384 -binary -out main/firmware/main.bin.sig main/firmware/main.bin
 
-printf "%08x" `cat firmware/main.bin | wc -c`| xxd -r -p >>firmware/main.bin.sig
+printf "%08x" `cat main/firmware/main.bin | wc -c`| xxd -r -p >>main/firmware/main.bin.sig
 ```
 
 
